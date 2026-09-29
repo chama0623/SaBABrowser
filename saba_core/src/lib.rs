@@ -1,14 +1,4 @@
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
-}
+#![no_std] // 標準ライブラリが不要であることを宣言
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
-}
+extern crate alloc; // ヒープメモリを使用する機能を明示的に読み込む(標準ライブラリに含まれているが、no_std環境では自動的に読み込まれないため)
+pub mod url; // urlモジュールを公開する
